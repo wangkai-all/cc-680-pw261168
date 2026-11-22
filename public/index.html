@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>门店体验评分补全实验室</title>
+  <meta name="description" content="带正则的低秩门店体验评分补全：整批留出验证、区块遮蔽检查、收敛与均值塌缩诊断。" />
+  <link rel="stylesheet" href="/styles.css" />
+  <script src="/app.js" type="module"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到主要内容</a>
+
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true">◇</span>
+        <div>
+          <h1>门店体验评分补全实验室</h1>
+          <p class="brand-sub">带正则的低秩补全 · 整批留出验证 · 区块遮蔽探针</p>
+        </div>
+      </div>
+      <div class="topbar-actions">
+        <span class="dataset-chip" id="dataset-chip">载入中…</span>
+        <button class="btn btn-ghost" id="theme-toggle" type="button" aria-label="切换明暗主题" title="切换明暗主题">
+          <span class="theme-icon" aria-hidden="true">◐</span>
+          <span class="theme-label">主题</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <noscript>
+    <div class="noscript">本页面需要 JavaScript 才能运行补全分析。</div>
+  </noscript>
+
+  <main id="main" class="layout">
+    <section class="controls card" id="controls" aria-labelledby="controls-title">
+      <div class="card-head">
+        <div>
+          <h2 id="controls-title">分析设置</h2>
+          <p class="card-sub">模型复杂度与数据留出。所有误差只来自原始观测。</p>
+        </div>
+        <button class="btn btn-primary" id="run-btn" type="button">
+          <span class="run-label">运行分析</span>
+          <span class="run-spinner" aria-hidden="true"></span>
+        </button>
+      </div>
+
+      <div class="controls-grid">
+        <div class="control-group">
+          <label class="control-label" for="rank-input">
+            模型复杂度 <span class="mono" id="rank-value">2</span>
+          </label>
+          <input id="rank-input" type="range" min="0" max="5" step="1" value="2" aria-describedby="rank-hint" />
+          <p class="control-hint" id="rank-hint">秩 = 0 时只有均值与行列偏移；秩越高越能表达交互，但更容易记住噪声。</p>
+        </div>
+
+        <div class="control-group">
+          <label class="control-label" for="lambda-input">
+            正则强度 λ <span class="mono" id="lambda-value">1.20</span>
+          </label>
+          <input id="lambda-input" type="range" min="0" max="100" step="1" value="30" aria-describedby="lambda-hint" />
+          <p class="control-hint" id="lambda-hint">对数刻度：0.05–100。λ 越大收缩越强，过强会让补全值塌向总均值。</p>
+        </div>
+
+        <div class="control-group">
+          <label class="control-label" for="inits-input">
+            初始化次数 <span class="mono" id="inits-value">4</span>
+          </label>
+          <input id="inits-input" type="range" min="1" max="6" step="1" value="4" aria-describedby="inits-hint" />
+          <p class="control-hint" id="inits-hint">多次随机初始化用于衡量补全结果的稳定程度；1 次无法比较。</p>
+        </div>
+
+        <div class="control-group control-group--presets">
+          <span class="control-label">诊断视图</span>
+          <div class="segmented" role="group" aria-label="诊断视图">
+            <button type="button" class="seg-btn" data-mode="sweep-rank">秩扫描</button>
+            <button type="button" class="seg-btn" data-mode="sweep-lambda">λ 扫描</button>
+            <button type="button" class="seg-btn" data-mode="probe">区块遮蔽</button>
+          </div>
+          <p class="control-hint">扫描会把每一档复杂度都完整拟合一次（固定 2 次初始化），不会用验证误差挑选模型并隐藏选择过程。</p>
+        </div>
+      </div>
+
+      <div class="control-section" id="holdout-section">
+        <div class="section-head">
+          <h3>整批留出</h3>
+          <div class="section-actions">
+            <button class="btn btn-small btn-ghost" type="button" id="holdout-default">恢复默认</button>
+            <button class="btn btn-small btn-ghost" type="button" id="holdout-none">全部训练</button>
+          </div>
+        </div>
+        <p class="section-hint">按整个调查批次留出：同一份问卷拆出的评分只会整体在训练集或验证集，绝不会一半训练、一半验证。</p>
+        <div class="batch-toggle-groups" id="batch-toggles" role="group" aria-label="整批留出选择"></div>
+        <div class="holdout-summary" id="holdout-summary"></div>
+      </div>
+
+      <div class="control-section control-section--probe" id="probe-section">
+        <div class="section-head">
+          <h3>区块遮蔽探针</h3>
+          <span class="badge" id="probe-state">未启用</span>
+        </div>
+        <p class="section-hint">
+          暂时遮住一整块已知评分，让模型在完全看不到它们的情况下补全，用真实评分检查随机留点看不出的整块失败；恢复后回到原始数据。
+        </p>
+        <div class="probe-controls">
+          <label class="control-label" for="probe-preset">预置区块</label>
+          <select id="probe-preset" class="select"></select>
+          <p class="control-hint" id="probe-preset-desc">选择一个整块，右侧会预览将被遮住的行列。</p>
+          <div class="custom-probe" id="custom-probe" hidden></div>
+          <div class="probe-actions">
+            <button class="btn btn-warn" id="probe-apply" type="button">遮住此区块</button>
+            <button class="btn btn-primary" id="probe-reveal" type="button" disabled>恢复原数据</button>
+          </div>
+        </div>
+        <p class="probe-note">遮蔽永远不会改写底层数据；它只是本次分析的训练排除条件。</p>
+      </div>
+    </section>
+
+    <section class="warnings" id="warnings" aria-live="polite" aria-label="数据与模型警示"></section>
+
+    <section class="scoreboard" aria-label="误差概览">
+      <article class="tile" id="tile-train">
+        <p class="tile-label">训练误差 · RMSE</p>
+        <p class="tile-value" id="tile-train-value">—</p>
+        <p class="tile-meta" id="tile-train-meta">等待分析</p>
+      </article>
+      <article class="tile tile--holdout" id="tile-holdout">
+        <p class="tile-label">留出观测误差 · RMSE</p>
+        <p class="tile-value" id="tile-holdout-value">—</p>
+        <p class="tile-meta" id="tile-holdout-meta">等待分析</p>
+      </article>
+      <article class="tile tile--probe" id="tile-probe">
+        <p class="tile-label">区块遮蔽误差 · RMSE</p>
+        <p class="tile-value" id="tile-probe-value">—</p>
+        <p class="tile-meta" id="tile-probe-meta">未启用探针</p>
+      </article>
+      <article class="tile" id="tile-coverage">
+        <p class="tile-label">可补全 / 已知格子</p>
+        <p class="tile-value" id="tile-coverage-value">—</p>
+        <p class="tile-meta" id="tile-coverage-meta">等待分析</p>
+      </article>
+    </section>
+
+    <section class="card panel" id="matrix-panel" aria-labelledby="matrix-title">
+      <div class="card-head">
+        <div>
+          <h2 id="matrix-title">门店 × 服务评分矩阵</h2>
+          <p class="card-sub" id="matrix-sub">每行一家门店，每列一项评分。空白格保持缺失；未知格不显示误差。</p>
+        </div>
+        <div class="matrix-tools">
+          <label class="tool-field">
+            <span>视图</span>
+            <select id="matrix-view" class="select select-small">
+              <option value="status">观测状态</option>
+              <option value="estimate">补全值</option>
+              <option value="residual">留出残差</option>
+              <option value="stability">初始化稳定度</option>
+            </select>
+          </label>
+          <button class="btn btn-small btn-ghost" id="matrix-export" type="button">导出 CSV</button>
+        </div>
+      </div>
+      <div class="matrix-legend" id="matrix-legend"></div>
+      <div class="matrix-wrap" id="matrix-wrap" tabindex="0" role="region" aria-label="评分矩阵，可滚动">
+        <div class="matrix" id="matrix"></div>
+      </div>
+      <div class="matrix-scale" id="matrix-scale"></div>
+      <div class="matrix-foot" id="matrix-foot"></div>
+    </section>
+
+    <section class="grid-2">
+      <article class="card panel" id="curve-panel" aria-labelledby="curve-title">
+        <div class="card-head">
+          <div>
+            <h2 id="curve-title">训练误差与留出误差</h2>
+            <p class="card-sub" id="curve-sub">横轴为交替拟合轮次。留出曲线只用于观察，不参与停止判断。</p>
+          </div>
+          <button class="btn btn-small btn-ghost table-toggle" type="button" data-target="curve-table" aria-expanded="false">表格</button>
+        </div>
+        <div class="chart-wrap" id="curve-chart" data-chart-height="250"></div>
+        <div class="chart-legend" id="curve-legend"></div>
+        <div class="chart-note" id="curve-note"></div>
+        <div class="data-table" id="curve-table" hidden></div>
+      </article>
+
+      <article class="card panel" id="sweep-panel" aria-labelledby="sweep-title">
+        <div class="card-head">
+          <div>
+            <h2 id="sweep-title">复杂度扫描</h2>
+            <p class="card-sub" id="sweep-sub">每一档都完整重拟合。留出误差缺失的档位保持空白，不画成 0。</p>
+          </div>
+          <div class="segmented segmented--small" role="group" aria-label="扫描维度">
+            <button type="button" class="seg-btn" data-sweep="rank">秩</button>
+            <button type="button" class="seg-btn" data-sweep="lambda">λ</button>
+          </div>
+        </div>
+        <div class="chart-wrap" id="sweep-chart" data-chart-height="250"></div>
+        <div class="chart-legend" id="sweep-legend"></div>
+        <div class="chart-note" id="sweep-note"></div>
+        <div class="data-table" id="sweep-table" hidden></div>
+      </article>
+    </section>
+
+    <section class="grid-2">
+      <article class="card panel" id="holdout-panel" aria-labelledby="holdout-title">
+        <div class="card-head">
+          <h2 id="holdout-title">按留出批次分别评估</h2>
+        </div>
+        <p class="card-sub">每个被整批留出的问卷单独给出样本量与误差；没有可评估评分的批次明确写“无可用观测”。</p>
+        <div class="batch-errors" id="batch-errors"></div>
+      </article>
+
+      <article class="card panel" id="diag-panel" aria-labelledby="diag-title">
+        <div class="card-head">
+          <h2 id="diag-title">拟合诊断</h2>
+        </div>
+        <div class="diag-block" id="diag-convergence"></div>
+        <div class="diag-block" id="diag-collapse"></div>
+        <div class="diag-block" id="diag-stability"></div>
+        <details class="fit-details">
+          <summary>逐次初始化拟合明细</summary>
+          <div class="data-table data-table--compact" id="fit-table"></div>
+        </details>
+      </article>
+    </section>
+
+    <section class="card panel" id="components-panel" aria-labelledby="components-title">
+      <div class="card-head">
+        <div>
+          <h2 id="components-title">观测连通块</h2>
+          <p class="card-sub">同一块内的行与列由观测链连接。跨块格子没有共同依据，不给估计。</p>
+        </div>
+      </div>
+      <div class="components-grid" id="components-grid"></div>
+    </section>
+
+    <section class="card panel" id="support-panel" aria-labelledby="support-title">
+      <div class="card-head">
+        <div>
+          <h2 id="support-title">行 / 列支撑与从未观测</h2>
+          <p class="card-sub">区分“全部观测”“整批留出”“已遮蔽”“从未观测”。没有任何观测的行或列不进入模型。</p>
+        </div>
+        <div class="segmented segmented--small" role="group" aria-label="支撑表切换">
+          <button type="button" class="seg-btn" data-support="stores">门店</button>
+          <button type="button" class="seg-btn" data-support="items">评分项</button>
+        </div>
+      </div>
+      <div class="support-wrap" id="support-wrap"></div>
+    </section>
+
+    <section class="card panel" id="table-panel" aria-labelledby="table-title">
+      <div class="card-head">
+        <div>
+          <h2 id="table-title">观测与补全明细</h2>
+          <p class="card-sub">每个原始观测的真实值与补全值并列；留出与遮蔽观测单独标注，未知格不参与误差计算。</p>
+        </div>
+        <div class="table-tools">
+          <label class="tool-field">
+            <span>行类型</span>
+            <select id="table-filter" class="select select-small">
+              <option value="all">全部观测</option>
+              <option value="train">训练观测</option>
+              <option value="holdout">留出观测</option>
+              <option value="probe">遮蔽观测</option>
+            </select>
+          </label>
+          <span class="table-count" id="table-count"></span>
+        </div>
+      </div>
+      <div class="data-table data-table--scroll" id="records-table"></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>
+      本地合成的非均匀缺失评分数据 · 种子 <span class="mono" id="seed-text">—</span> ·
+      模型只读取原始训练评分，不使用补全值再训练 · 未知格不显示误差
+    </p>
+  </footer>
+
+  <div class="cell-drawer" id="cell-drawer" hidden role="dialog" aria-modal="false" aria-labelledby="drawer-title">
+    <div class="drawer-head">
+      <div>
+        <p class="drawer-kicker" id="drawer-kicker">格子详情</p>
+        <h2 id="drawer-title">—</h2>
+      </div>
+      <button class="icon-btn" id="drawer-close" type="button" aria-label="关闭格子详情">✕</button>
+    </div>
+    <div class="drawer-body" id="drawer-body"></div>
+  </div>
+  <div class="drawer-backdrop" id="drawer-backdrop" hidden></div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+</body>
+</html>

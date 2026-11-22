@@ -1,0 +1,17 @@
+{
+  "name": "store-experience-imputation-lab",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Regularized low-rank imputation lab for store experience survey ratings",
+  "scripts": {
+    "start": "node server/index.js",
+    "dev": "node --watch server/index.js",
+    "test": "node --test test/*.test.js",
+    "check": "node --check server/index.js && node --check server/data.js && node --check server/model.js && node --check server/analysis.js && node --check server/sweep.js && node --check server/presets.js && node --check public/app.js && node --check public/charts.js && node --check scripts/export-dataset.js && node --check scripts/playwright-loader.mjs && node --check scripts/screenshot.mjs && node --check scripts/interaction-test.mjs && node --check scripts/edge-test.mjs",
+    "export:data": "node scripts/export-dataset.js"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

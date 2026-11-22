@@ -1,0 +1,3248 @@
+{
+  "meta": {
+    "title": "门店体验评分补全实验室",
+    "seed": 20261122,
+    "version": 1,
+    "generatedAt": "2026-11-22T09:00:00+08:00",
+    "synthetic": true,
+    "missingMechanism": "非均匀缺失：门店响应倾向、项目投放偏好、设施条件与真实评分共同影响是否被观测；批次之间还存在整体水平偏移；两个问卷块之间从未建立共同观测。",
+    "defaultHoldoutBatches": [
+      "W05",
+      "O02"
+    ],
+    "defaultRank": 2,
+    "defaultLambda": 1.2,
+    "defaultInits": 4,
+    "relabeledForHoldoutSupport": 1,
+    "totalCells": 684,
+    "observedCells": 264,
+    "missingCells": 420,
+    "observedRate": 0.386,
+    "storeCount": 38,
+    "itemCount": 18
+  },
+  "stores": [
+    {
+      "id": "S01",
+      "name": "望江旗舰店",
+      "block": "core",
+      "format": "旗舰店",
+      "region": "华东",
+      "facilities": {
+        "parking": true,
+        "fitting": true,
+        "family": true
+      },
+      "responsePropensity": 0.78,
+      "observedCount": 6,
+      "displayBlock": "主问卷"
+    },
+    {
+      "id": "S02",
+      "name": "湖滨中心店",
+      "block": "core",
+      "format": "旗舰店",
+      "region": "华南",
+      "facilities": {
+        "parking": true,
+        "fitting": true,
+        "family": true
+      },
+      "responsePropensity": 0.93,
+      "observedCount": 10,
+      "displayBlock": "主问卷"
+    },
+    {
+      "id": "S03",
+      "name": "南岸广场店",
+      "block": "core",
+      "format": "旗舰店",
+      "region": "华北",
+      "facilities": {
+        "parking": true,
+        "fitting": true,
+        "family": true
+      },
+      "responsePropensity": 0.68,
+      "observedCount": 9,
+      "displayBlock": "主问卷"
+    },
+    {
+      "id": "S04",
+      "name": "北城天街店",
+      "block": "core",
+      "format": "旗舰店",
+      "region": "西南",
+      "facilities": {
+        "parking": true,
+        "fitting": true,
+        "family": true
+      },
+      "responsePropensity": 0.76,
+      "observedCount": 9,
+      "displayBlock": "主问卷"
+    },
+    {
+      "id": "S05",
+      "name": "东港时代店",
+      "block": "core",
+      "format": "旗舰店",
+      "region": "华东",
+      "facilities": {
+        "parking": false,
+        "fitting": true,
+        "family": true
+      },
+      "responsePropensity": 0.89,
+      "observedCount": 10,
+      "displayBlock": "主问卷"
+    },
+    {
+      "id": "S06",
+      "name": "西溪里店",
+      "block": "core",
+      "format": "旗舰店",
+      "region": "华南",
+      "facilities": {
+        "parking": true,
+        "fitting": true,
+        "family": true
+      },
+      "responsePropensity": 0.7,
+      "observedCount": 7,
+      "displayBlock": "主问卷"
+    },
+    {
+      "id": "S07",
+      "name": "星河湾店",
+      "block": "core",
+      "format": "标准店",
+      "region": "华北",
+      "facilities": {
+        "parking": true,
+        "fitting": false,
+        "family": false
+      },
+      "responsePropensity": 0.68,
+      "observedCount": 8,
+      "displayBlock": "主问卷"
+    },
+    {
+      "id": "S08",
+      "name": "青枫路店",
+      "block": "core",
+      "format": "标准店",
+      "region": "西南",
+      "facilities": {
+        "parking": true,
+        "fitting": true,
+        "family": false
+      },
+      "responsePropensity": 0.87,
+      "observedCount": 10,
+      "displayBlock": "主问卷"
+    },
+    {
+      "id": "S09",
+      "name": "云栖小镇店",
+      "block": "core",
+      "format": "社区店",
+      "region": "华东",
+      "facilities": {
+        "parking": true,
+        "fitting": true,
+        "family": true
+      },
+      "responsePropensity": 0.88,
+      "observedCount": 11,
+      "displayBlock": "主问卷"
+    },
+    {
+      "id": "S10",
+      "name": "海港城店",
+      "block": "core",
+      "format": "标准店",
+      "region": "华南",
+      "facilities": {
+        "parking": true,
+        "fitting": true,
+        "family": false
+      },
+      "responsePropensity": 0.59,
+      "observedCount": 8,
+      "displayBlock": "主问卷"
+    },
+    {
+      "id": "S11",
+      "name": "新天地店",
+      "block": "core",
+      "format": "标准店",
+      "region": "华北",
+      "facilities": {
+        "parking": false,
+        "fitting": true,
+        "family": false
+      },
+      "responsePropensity": 0.66,
+      "observedCount": 5,
+      "displayBlock": "主问卷"
+    },
+    {
+      "id": "S12",
+      "name": "世纪汇店",
+      "block": "core",
+      "format": "标准店",
+      "region": "西南",
+      "facilities": {
+        "parking": true,
+        "fitting": true,
+        "family": false
+      },
+      "responsePropensity": 0.62,
+      "observedCount": 6,
+      "displayBlock": "主问卷"
+    },
+    {
+      "id": "S13",
+      "name": "万象城店",
+      "block": "core",
+      "format": "社区店",
+      "region": "华东",
+      "facilities": {
+        "parking": true,
+        "fitting": true,
+        "family": true
+      },
+      "responsePropensity": 0.91,
+      "observedCount": 10,
+      "displayBlock": "主问卷"
+    },
+    {
+      "id": "S14",
+      "name": "银泰中心店",
+      "block": "core",
+      "format": "标准店",
+      "region": "华南",
+      "facilities": {
+        "parking": true,
+        "fitting": true,
+        "family": false
+      },
+      "responsePropensity": 0.74,
+      "observedCount": 9,
+      "displayBlock": "主问卷"
+    },
+    {
+      "id": "S15",
+      "name": "龙湖天街店",
+      "block": "core",
+      "format": "标准店",
+      "region": "华北",
+      "facilities": {
+        "parking": true,
+        "fitting": false,
+        "family": false
+      },
+      "responsePropensity": 0.85,
+      "observedCount": 6,
+      "displayBlock": "主问卷"
+    },
+    {
+      "id": "S16",
+      "name": "凯德广场店",
+      "block": "core",
+      "format": "标准店",
+      "region": "西南",
+      "facilities": {
+        "parking": true,
+        "fitting": true,
+        "family": false
+      },
+      "responsePropensity": 0.7,
+      "observedCount": 8,
+      "displayBlock": "主问卷"
+    },
+    {
+      "id": "S17",
+      "name": "来福士店",
+      "block": "core",
+      "format": "社区店",
+      "region": "华东",
+      "facilities": {
+        "parking": false,
+        "fitting": true,
+        "family": true
+      },
+      "responsePropensity": 0.7,
+      "observedCount": 10,
+      "displayBlock": "主问卷"
+    },
+    {
+      "id": "S18",
+      "name": "太古里店",
+      "block": "core",
+      "format": "标准店",
+      "region": "华南",
+      "facilities": {
+        "parking": true,
+        "fitting": true,
+        "family": false
+      },
+      "responsePropensity": 0.72,
+      "observedCount": 7,
+      "displayBlock": "主问卷"
+    },
+    {
+      "id": "S19",
+      "name": "恒隆广场店",
+      "block": "core",
+      "format": "标准店",
+      "region": "华北",
+      "facilities": {
+        "parking": true,
+        "fitting": true,
+        "family": false
+      },
+      "responsePropensity": 0.67,
+      "observedCount": 9,
+      "displayBlock": "主问卷"
+    },
+    {
+      "id": "S20",
+      "name": "大悦城店",
+      "block": "core",
+      "format": "标准店",
+      "region": "西南",
+      "facilities": {
+        "parking": true,
+        "fitting": true,
+        "family": false
+      },
+      "responsePropensity": 0.75,
+      "observedCount": 11,
+      "displayBlock": "主问卷"
+    },
+    {
+      "id": "S21",
+      "name": "印象城店",
+      "block": "core",
+      "format": "社区店",
+      "region": "华东",
+      "facilities": {
+        "parking": true,
+        "fitting": true,
+        "family": true
+      },
+      "responsePropensity": 0.59,
+      "observedCount": 10,
+      "displayBlock": "主问卷"
+    },
+    {
+      "id": "S22",
+      "name": "环贸广场店",
+      "block": "core",
+      "format": "标准店",
+      "region": "华南",
+      "facilities": {
+        "parking": true,
+        "fitting": true,
+        "family": false
+      },
+      "responsePropensity": 0.6,
+      "observedCount": 9,
+      "displayBlock": "主问卷"
+    },
+    {
+      "id": "S23",
+      "name": "合生汇店",
+      "block": "core",
+      "format": "标准店",
+      "region": "华北",
+      "facilities": {
+        "parking": false,
+        "fitting": false,
+        "family": false
+      },
+      "responsePropensity": 0.58,
+      "observedCount": 7,
+      "displayBlock": "主问卷"
+    },
+    {
+      "id": "S24",
+      "name": "荟聚中心店",
+      "block": "core",
+      "format": "标准店",
+      "region": "西南",
+      "facilities": {
+        "parking": true,
+        "fitting": true,
+        "family": false
+      },
+      "responsePropensity": 0.71,
+      "observedCount": 10,
+      "displayBlock": "主问卷"
+    },
+    {
+      "id": "S25",
+      "name": "龙之梦店",
+      "block": "core",
+      "format": "社区店",
+      "region": "华东",
+      "facilities": {
+        "parking": true,
+        "fitting": true,
+        "family": true
+      },
+      "responsePropensity": 0.9,
+      "observedCount": 11,
+      "displayBlock": "主问卷"
+    },
+    {
+      "id": "S26",
+      "name": "宝龙广场店",
+      "block": "core",
+      "format": "标准店",
+      "region": "华南",
+      "facilities": {
+        "parking": true,
+        "fitting": true,
+        "family": false
+      },
+      "responsePropensity": 0.83,
+      "observedCount": 9,
+      "displayBlock": "主问卷"
+    },
+    {
+      "id": "S27",
+      "name": "万达广场店",
+      "block": "core",
+      "format": "标准店",
+      "region": "华北",
+      "facilities": {
+        "parking": true,
+        "fitting": true,
+        "family": false
+      },
+      "responsePropensity": 0.83,
+      "observedCount": 8,
+      "displayBlock": "主问卷"
+    },
+    {
+      "id": "S28",
+      "name": "苏宁广场店",
+      "block": "core",
+      "format": "标准店",
+      "region": "西南",
+      "facilities": {
+        "parking": true,
+        "fitting": true,
+        "family": false
+      },
+      "responsePropensity": 0.78,
+      "observedCount": 6,
+      "displayBlock": "主问卷"
+    },
+    {
+      "id": "S29",
+      "name": "奥莱·东岸店",
+      "block": "outlet",
+      "format": "奥莱店",
+      "region": "华东",
+      "facilities": {
+        "parking": true,
+        "fitting": false,
+        "family": true
+      },
+      "responsePropensity": 0.9,
+      "observedCount": 5,
+      "displayBlock": "奥莱问卷"
+    },
+    {
+      "id": "S30",
+      "name": "奥莱·西岭店",
+      "block": "outlet",
+      "format": "奥莱店",
+      "region": "华南",
+      "facilities": {
+        "parking": true,
+        "fitting": false,
+        "family": false
+      },
+      "responsePropensity": 0.84,
+      "observedCount": 3,
+      "displayBlock": "奥莱问卷"
+    },
+    {
+      "id": "S31",
+      "name": "奥莱·南湖店",
+      "block": "outlet",
+      "format": "奥莱店",
+      "region": "华北",
+      "facilities": {
+        "parking": false,
+        "fitting": false,
+        "family": false
+      },
+      "responsePropensity": 0.64,
+      "observedCount": 3,
+      "displayBlock": "奥莱问卷"
+    },
+    {
+      "id": "S32",
+      "name": "奥莱·北苑店",
+      "block": "outlet",
+      "format": "奥莱店",
+      "region": "西南",
+      "facilities": {
+        "parking": true,
+        "fitting": false,
+        "family": false
+      },
+      "responsePropensity": 0.63,
+      "observedCount": 2,
+      "displayBlock": "奥莱问卷"
+    },
+    {
+      "id": "S33",
+      "name": "奥莱·云谷店",
+      "block": "outlet",
+      "format": "奥莱店",
+      "region": "华东",
+      "facilities": {
+        "parking": true,
+        "fitting": false,
+        "family": true
+      },
+      "responsePropensity": 0.9,
+      "observedCount": 3,
+      "displayBlock": "奥莱问卷"
+    },
+    {
+      "id": "S34",
+      "name": "奥莱·江畔店",
+      "block": "outlet",
+      "format": "奥莱店",
+      "region": "华南",
+      "facilities": {
+        "parking": false,
+        "fitting": false,
+        "family": false
+      },
+      "responsePropensity": 0.63,
+      "observedCount": 3,
+      "displayBlock": "奥莱问卷"
+    },
+    {
+      "id": "S35",
+      "name": "奥莱·晴岚店",
+      "block": "outlet",
+      "format": "奥莱店",
+      "region": "华北",
+      "facilities": {
+        "parking": true,
+        "fitting": false,
+        "family": false
+      },
+      "responsePropensity": 0.91,
+      "observedCount": 3,
+      "displayBlock": "奥莱问卷"
+    },
+    {
+      "id": "S36",
+      "name": "奥莱·松间店",
+      "block": "outlet",
+      "format": "奥莱店",
+      "region": "西南",
+      "facilities": {
+        "parking": true,
+        "fitting": false,
+        "family": false
+      },
+      "responsePropensity": 0.87,
+      "observedCount": 3,
+      "displayBlock": "奥莱问卷"
+    },
+    {
+      "id": "S37",
+      "name": "新城筹备店",
+      "block": "none",
+      "format": "筹备中",
+      "region": "—",
+      "facilities": {
+        "parking": false,
+        "fitting": false,
+        "family": false
+      },
+      "responsePropensity": 0,
+      "observedCount": 0,
+      "displayBlock": "从未观测"
+    },
+    {
+      "id": "S38",
+      "name": "老码头店",
+      "block": "none",
+      "format": "已闭店",
+      "region": "—",
+      "facilities": {
+        "parking": false,
+        "fitting": false,
+        "family": false
+      },
+      "responsePropensity": 0,
+      "observedCount": 0,
+      "displayBlock": "从未观测"
+    }
+  ],
+  "items": [
+    {
+      "id": "Q01",
+      "name": "迎宾问候",
+      "category": "人员服务",
+      "block": "core",
+      "description": "全部主问卷门店投放",
+      "observedCount": 27,
+      "displayBlock": "主问卷"
+    },
+    {
+      "id": "Q02",
+      "name": "环境整洁",
+      "category": "空间环境",
+      "block": "core",
+      "description": "全部主问卷门店投放",
+      "observedCount": 24,
+      "displayBlock": "主问卷"
+    },
+    {
+      "id": "Q03",
+      "name": "商品陈列",
+      "category": "商品体验",
+      "block": "core",
+      "description": "全部主问卷门店投放",
+      "observedCount": 25,
+      "displayBlock": "主问卷"
+    },
+    {
+      "id": "Q04",
+      "name": "店员专业度",
+      "category": "人员服务",
+      "block": "core",
+      "description": "全部主问卷门店投放",
+      "observedCount": 20,
+      "displayBlock": "主问卷"
+    },
+    {
+      "id": "Q05",
+      "name": "结账效率",
+      "category": "流程效率",
+      "block": "core",
+      "description": "全部主问卷门店投放",
+      "observedCount": 20,
+      "displayBlock": "主问卷"
+    },
+    {
+      "id": "Q06",
+      "name": "退换货便利",
+      "category": "流程效率",
+      "block": "core",
+      "description": "全部主问卷门店投放",
+      "observedCount": 22,
+      "displayBlock": "主问卷"
+    },
+    {
+      "id": "Q07",
+      "name": "试衣间体验",
+      "category": "空间环境",
+      "block": "core",
+      "description": "仅向具备试衣间条件的门店投放",
+      "observedCount": 19,
+      "displayBlock": "主问卷"
+    },
+    {
+      "id": "Q08",
+      "name": "会员权益",
+      "category": "会员运营",
+      "block": "core",
+      "description": "全部主问卷门店投放",
+      "observedCount": 22,
+      "displayBlock": "主问卷"
+    },
+    {
+      "id": "Q09",
+      "name": "缺货补货",
+      "category": "商品体验",
+      "block": "core",
+      "description": "全部主问卷门店投放",
+      "observedCount": 12,
+      "displayBlock": "主问卷"
+    },
+    {
+      "id": "Q10",
+      "name": "停车指引",
+      "category": "到达体验",
+      "block": "core",
+      "description": "仅向具备停车条件的门店投放",
+      "observedCount": 15,
+      "displayBlock": "主问卷"
+    },
+    {
+      "id": "Q11",
+      "name": "母婴设施",
+      "category": "空间环境",
+      "block": "core",
+      "description": "仅向具备母婴条件的门店投放",
+      "observedCount": 12,
+      "displayBlock": "主问卷"
+    },
+    {
+      "id": "Q12",
+      "name": "无障碍设施",
+      "category": "空间环境",
+      "block": "core",
+      "description": "全部主问卷门店投放",
+      "observedCount": 21,
+      "displayBlock": "主问卷"
+    },
+    {
+      "id": "Q13",
+      "name": "折扣清晰度",
+      "category": "奥莱体验",
+      "block": "outlet",
+      "description": "奥莱专用问卷投放",
+      "observedCount": 5,
+      "displayBlock": "奥莱问卷"
+    },
+    {
+      "id": "Q14",
+      "name": "库存完整度",
+      "category": "奥莱体验",
+      "block": "outlet",
+      "description": "奥莱专用问卷投放",
+      "observedCount": 6,
+      "displayBlock": "奥莱问卷"
+    },
+    {
+      "id": "Q15",
+      "name": "导购响应",
+      "category": "奥莱体验",
+      "block": "outlet",
+      "description": "奥莱专用问卷投放",
+      "observedCount": 6,
+      "displayBlock": "奥莱问卷"
+    },
+    {
+      "id": "Q16",
+      "name": "停车指引",
+      "category": "奥莱体验",
+      "block": "outlet",
+      "description": "奥莱专用问卷投放",
+      "observedCount": 4,
+      "displayBlock": "奥莱问卷"
+    },
+    {
+      "id": "Q17",
+      "name": "礼品包装",
+      "category": "奥莱体验",
+      "block": "outlet",
+      "description": "奥莱专用问卷投放",
+      "observedCount": 4,
+      "displayBlock": "奥莱问卷"
+    },
+    {
+      "id": "Q18",
+      "name": "屋顶露台体验",
+      "category": "概念测试",
+      "block": "none",
+      "description": "仅概念测试，未在任何问卷中投放",
+      "observedCount": 0,
+      "displayBlock": "从未投放"
+    }
+  ],
+  "batches": [
+    {
+      "id": "W01",
+      "label": "春季主问卷",
+      "season": "2026 春",
+      "block": "core",
+      "effect": 0.08,
+      "observationCount": 34,
+      "isDefaultHoldout": false
+    },
+    {
+      "id": "W02",
+      "label": "春季回访",
+      "season": "2026 春",
+      "block": "core",
+      "effect": 0.42,
+      "observationCount": 39,
+      "isDefaultHoldout": false
+    },
+    {
+      "id": "W03",
+      "label": "五一高峰问卷",
+      "season": "2026 春",
+      "block": "core",
+      "effect": -0.13,
+      "observationCount": 29,
+      "isDefaultHoldout": false
+    },
+    {
+      "id": "W04",
+      "label": "夏季主问卷",
+      "season": "2026 夏",
+      "block": "core",
+      "effect": 0.17,
+      "observationCount": 22,
+      "isDefaultHoldout": false
+    },
+    {
+      "id": "W05",
+      "label": "夏季回访",
+      "season": "2026 夏",
+      "block": "core",
+      "effect": 0.27,
+      "observationCount": 27,
+      "isDefaultHoldout": true
+    },
+    {
+      "id": "W06",
+      "label": "秋季主问卷",
+      "season": "2026 秋",
+      "block": "core",
+      "effect": 0.07,
+      "observationCount": 37,
+      "isDefaultHoldout": false
+    },
+    {
+      "id": "W07",
+      "label": "秋季回访",
+      "season": "2026 秋",
+      "block": "core",
+      "effect": 0.25,
+      "observationCount": 26,
+      "isDefaultHoldout": false
+    },
+    {
+      "id": "W08",
+      "label": "双十一高峰问卷",
+      "season": "2026 秋",
+      "block": "core",
+      "effect": -0.08,
+      "observationCount": 25,
+      "isDefaultHoldout": false
+    },
+    {
+      "id": "O01",
+      "label": "奥莱春季问卷",
+      "season": "2026 春",
+      "block": "outlet",
+      "effect": 0.02,
+      "observationCount": 5,
+      "isDefaultHoldout": false
+    },
+    {
+      "id": "O02",
+      "label": "奥莱夏季问卷",
+      "season": "2026 夏",
+      "block": "outlet",
+      "effect": -0.07,
+      "observationCount": 8,
+      "isDefaultHoldout": true
+    },
+    {
+      "id": "O03",
+      "label": "奥莱秋季问卷",
+      "season": "2026 秋",
+      "block": "outlet",
+      "effect": -0.03,
+      "observationCount": 4,
+      "isDefaultHoldout": false
+    },
+    {
+      "id": "O04",
+      "label": "奥莱店庆问卷",
+      "season": "2026 秋",
+      "block": "outlet",
+      "effect": 0.03,
+      "observationCount": 8,
+      "isDefaultHoldout": false
+    }
+  ],
+  "observations": [
+    {
+      "storeId": "S01",
+      "itemId": "Q02",
+      "batchId": "W05",
+      "value": 3.5,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0001"
+    },
+    {
+      "storeId": "S01",
+      "itemId": "Q04",
+      "batchId": "W06",
+      "value": 3.9,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0002"
+    },
+    {
+      "storeId": "S01",
+      "itemId": "Q05",
+      "batchId": "W02",
+      "value": 4.2,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0003"
+    },
+    {
+      "storeId": "S01",
+      "itemId": "Q10",
+      "batchId": "W06",
+      "value": 3.7,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0004"
+    },
+    {
+      "storeId": "S01",
+      "itemId": "Q11",
+      "batchId": "W04",
+      "value": 3.8,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0005"
+    },
+    {
+      "storeId": "S01",
+      "itemId": "Q12",
+      "batchId": "W05",
+      "value": 3.7,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0006"
+    },
+    {
+      "storeId": "S02",
+      "itemId": "Q01",
+      "batchId": "W07",
+      "value": 4.6,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0007"
+    },
+    {
+      "storeId": "S02",
+      "itemId": "Q02",
+      "batchId": "W03",
+      "value": 4.7,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0008"
+    },
+    {
+      "storeId": "S02",
+      "itemId": "Q03",
+      "batchId": "W04",
+      "value": 4.5,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0009"
+    },
+    {
+      "storeId": "S02",
+      "itemId": "Q04",
+      "batchId": "W04",
+      "value": 4.3,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0010"
+    },
+    {
+      "storeId": "S02",
+      "itemId": "Q05",
+      "batchId": "W03",
+      "value": 3.4,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0011"
+    },
+    {
+      "storeId": "S02",
+      "itemId": "Q06",
+      "batchId": "W02",
+      "value": 3.8,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0012"
+    },
+    {
+      "storeId": "S02",
+      "itemId": "Q07",
+      "batchId": "W02",
+      "value": 4.2,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0013"
+    },
+    {
+      "storeId": "S02",
+      "itemId": "Q08",
+      "batchId": "W08",
+      "value": 4.1,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0014"
+    },
+    {
+      "storeId": "S02",
+      "itemId": "Q11",
+      "batchId": "W04",
+      "value": 3.4,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0015"
+    },
+    {
+      "storeId": "S02",
+      "itemId": "Q12",
+      "batchId": "W01",
+      "value": 4.2,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0016"
+    },
+    {
+      "storeId": "S03",
+      "itemId": "Q01",
+      "batchId": "W05",
+      "value": 3.8,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0017"
+    },
+    {
+      "storeId": "S03",
+      "itemId": "Q02",
+      "batchId": "W06",
+      "value": 4.1,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0018"
+    },
+    {
+      "storeId": "S03",
+      "itemId": "Q03",
+      "batchId": "W07",
+      "value": 4.2,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0019"
+    },
+    {
+      "storeId": "S03",
+      "itemId": "Q04",
+      "batchId": "W01",
+      "value": 4.2,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0020"
+    },
+    {
+      "storeId": "S03",
+      "itemId": "Q05",
+      "batchId": "W03",
+      "value": 3.5,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0021"
+    },
+    {
+      "storeId": "S03",
+      "itemId": "Q07",
+      "batchId": "W04",
+      "value": 3.9,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0022"
+    },
+    {
+      "storeId": "S03",
+      "itemId": "Q10",
+      "batchId": "W02",
+      "value": 3.8,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0023"
+    },
+    {
+      "storeId": "S03",
+      "itemId": "Q11",
+      "batchId": "W01",
+      "value": 3.3,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0024"
+    },
+    {
+      "storeId": "S03",
+      "itemId": "Q12",
+      "batchId": "W03",
+      "value": 3.5,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0025"
+    },
+    {
+      "storeId": "S04",
+      "itemId": "Q01",
+      "batchId": "W07",
+      "value": 4.6,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0026"
+    },
+    {
+      "storeId": "S04",
+      "itemId": "Q02",
+      "batchId": "W02",
+      "value": 4.4,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0027"
+    },
+    {
+      "storeId": "S04",
+      "itemId": "Q03",
+      "batchId": "W01",
+      "value": 3.9,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0028"
+    },
+    {
+      "storeId": "S04",
+      "itemId": "Q04",
+      "batchId": "W01",
+      "value": 3.3,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0029"
+    },
+    {
+      "storeId": "S04",
+      "itemId": "Q05",
+      "batchId": "W03",
+      "value": 2.3,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0030"
+    },
+    {
+      "storeId": "S04",
+      "itemId": "Q06",
+      "batchId": "W08",
+      "value": 3.5,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0031"
+    },
+    {
+      "storeId": "S04",
+      "itemId": "Q07",
+      "batchId": "W06",
+      "value": 3.7,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0032"
+    },
+    {
+      "storeId": "S04",
+      "itemId": "Q10",
+      "batchId": "W06",
+      "value": 3.9,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0033"
+    },
+    {
+      "storeId": "S04",
+      "itemId": "Q12",
+      "batchId": "W06",
+      "value": 3.4,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0034"
+    },
+    {
+      "storeId": "S05",
+      "itemId": "Q01",
+      "batchId": "W08",
+      "value": 4.8,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0035"
+    },
+    {
+      "storeId": "S05",
+      "itemId": "Q02",
+      "batchId": "W05",
+      "value": 4.3,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0036"
+    },
+    {
+      "storeId": "S05",
+      "itemId": "Q03",
+      "batchId": "W01",
+      "value": 3.7,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0037"
+    },
+    {
+      "storeId": "S05",
+      "itemId": "Q04",
+      "batchId": "W02",
+      "value": 4,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0038"
+    },
+    {
+      "storeId": "S05",
+      "itemId": "Q05",
+      "batchId": "W02",
+      "value": 4.6,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0039"
+    },
+    {
+      "storeId": "S05",
+      "itemId": "Q06",
+      "batchId": "W02",
+      "value": 4.3,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0040"
+    },
+    {
+      "storeId": "S05",
+      "itemId": "Q07",
+      "batchId": "W02",
+      "value": 4.8,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0041"
+    },
+    {
+      "storeId": "S05",
+      "itemId": "Q08",
+      "batchId": "W06",
+      "value": 3.2,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0042"
+    },
+    {
+      "storeId": "S05",
+      "itemId": "Q11",
+      "batchId": "W01",
+      "value": 3.8,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0043"
+    },
+    {
+      "storeId": "S05",
+      "itemId": "Q12",
+      "batchId": "W04",
+      "value": 3,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0044"
+    },
+    {
+      "storeId": "S06",
+      "itemId": "Q01",
+      "batchId": "W08",
+      "value": 4.1,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0045"
+    },
+    {
+      "storeId": "S06",
+      "itemId": "Q02",
+      "batchId": "W07",
+      "value": 4,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0046"
+    },
+    {
+      "storeId": "S06",
+      "itemId": "Q03",
+      "batchId": "W02",
+      "value": 3.8,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0047"
+    },
+    {
+      "storeId": "S06",
+      "itemId": "Q04",
+      "batchId": "W05",
+      "value": 4.5,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0048"
+    },
+    {
+      "storeId": "S06",
+      "itemId": "Q06",
+      "batchId": "W02",
+      "value": 4.1,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0049"
+    },
+    {
+      "storeId": "S06",
+      "itemId": "Q08",
+      "batchId": "W05",
+      "value": 3.4,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0050"
+    },
+    {
+      "storeId": "S06",
+      "itemId": "Q12",
+      "batchId": "W07",
+      "value": 3.4,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0051"
+    },
+    {
+      "storeId": "S07",
+      "itemId": "Q01",
+      "batchId": "W03",
+      "value": 3.9,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0052"
+    },
+    {
+      "storeId": "S07",
+      "itemId": "Q02",
+      "batchId": "W07",
+      "value": 4,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0053"
+    },
+    {
+      "storeId": "S07",
+      "itemId": "Q03",
+      "batchId": "W06",
+      "value": 4.2,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0054"
+    },
+    {
+      "storeId": "S07",
+      "itemId": "Q04",
+      "batchId": "W06",
+      "value": 3.9,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0055"
+    },
+    {
+      "storeId": "S07",
+      "itemId": "Q05",
+      "batchId": "W06",
+      "value": 4,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0056"
+    },
+    {
+      "storeId": "S07",
+      "itemId": "Q06",
+      "batchId": "W06",
+      "value": 4.2,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0057"
+    },
+    {
+      "storeId": "S07",
+      "itemId": "Q09",
+      "batchId": "W03",
+      "value": 3.5,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0058"
+    },
+    {
+      "storeId": "S07",
+      "itemId": "Q12",
+      "batchId": "W03",
+      "value": 3.4,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0059"
+    },
+    {
+      "storeId": "S08",
+      "itemId": "Q01",
+      "batchId": "W07",
+      "value": 4,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0060"
+    },
+    {
+      "storeId": "S08",
+      "itemId": "Q02",
+      "batchId": "W02",
+      "value": 4.6,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0061"
+    },
+    {
+      "storeId": "S08",
+      "itemId": "Q03",
+      "batchId": "W04",
+      "value": 4.2,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0062"
+    },
+    {
+      "storeId": "S08",
+      "itemId": "Q04",
+      "batchId": "W02",
+      "value": 2.9,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0063"
+    },
+    {
+      "storeId": "S08",
+      "itemId": "Q05",
+      "batchId": "W06",
+      "value": 3.4,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0064"
+    },
+    {
+      "storeId": "S08",
+      "itemId": "Q06",
+      "batchId": "W04",
+      "value": 3.3,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0065"
+    },
+    {
+      "storeId": "S08",
+      "itemId": "Q08",
+      "batchId": "W07",
+      "value": 3.8,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0066"
+    },
+    {
+      "storeId": "S08",
+      "itemId": "Q09",
+      "batchId": "W02",
+      "value": 4.2,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0067"
+    },
+    {
+      "storeId": "S08",
+      "itemId": "Q10",
+      "batchId": "W05",
+      "value": 4,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0068"
+    },
+    {
+      "storeId": "S08",
+      "itemId": "Q12",
+      "batchId": "W05",
+      "value": 3.8,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0069"
+    },
+    {
+      "storeId": "S09",
+      "itemId": "Q01",
+      "batchId": "W02",
+      "value": 5,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0070"
+    },
+    {
+      "storeId": "S09",
+      "itemId": "Q02",
+      "batchId": "W08",
+      "value": 4.5,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0071"
+    },
+    {
+      "storeId": "S09",
+      "itemId": "Q03",
+      "batchId": "W01",
+      "value": 3.9,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0072"
+    },
+    {
+      "storeId": "S09",
+      "itemId": "Q04",
+      "batchId": "W02",
+      "value": 4,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0073"
+    },
+    {
+      "storeId": "S09",
+      "itemId": "Q05",
+      "batchId": "W06",
+      "value": 4.3,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0074"
+    },
+    {
+      "storeId": "S09",
+      "itemId": "Q06",
+      "batchId": "W01",
+      "value": 3.6,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0075"
+    },
+    {
+      "storeId": "S09",
+      "itemId": "Q07",
+      "batchId": "W06",
+      "value": 3.6,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0076"
+    },
+    {
+      "storeId": "S09",
+      "itemId": "Q08",
+      "batchId": "W01",
+      "value": 4.5,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0077"
+    },
+    {
+      "storeId": "S09",
+      "itemId": "Q10",
+      "batchId": "W06",
+      "value": 2.9,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0078"
+    },
+    {
+      "storeId": "S09",
+      "itemId": "Q11",
+      "batchId": "W06",
+      "value": 3.8,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0079"
+    },
+    {
+      "storeId": "S09",
+      "itemId": "Q12",
+      "batchId": "W07",
+      "value": 3.6,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0080"
+    },
+    {
+      "storeId": "S10",
+      "itemId": "Q01",
+      "batchId": "W08",
+      "value": 4.1,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0081"
+    },
+    {
+      "storeId": "S10",
+      "itemId": "Q02",
+      "batchId": "W06",
+      "value": 4,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0082"
+    },
+    {
+      "storeId": "S10",
+      "itemId": "Q03",
+      "batchId": "W05",
+      "value": 4.3,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0083"
+    },
+    {
+      "storeId": "S10",
+      "itemId": "Q05",
+      "batchId": "W08",
+      "value": 3.8,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0084"
+    },
+    {
+      "storeId": "S10",
+      "itemId": "Q06",
+      "batchId": "W03",
+      "value": 3.9,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0085"
+    },
+    {
+      "storeId": "S10",
+      "itemId": "Q09",
+      "batchId": "W03",
+      "value": 2.9,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0086"
+    },
+    {
+      "storeId": "S10",
+      "itemId": "Q11",
+      "batchId": "W07",
+      "value": 3.7,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0087"
+    },
+    {
+      "storeId": "S10",
+      "itemId": "Q12",
+      "batchId": "W06",
+      "value": 3.8,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0088"
+    },
+    {
+      "storeId": "S11",
+      "itemId": "Q01",
+      "batchId": "W01",
+      "value": 3.9,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0089"
+    },
+    {
+      "storeId": "S11",
+      "itemId": "Q03",
+      "batchId": "W08",
+      "value": 3.5,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0090"
+    },
+    {
+      "storeId": "S11",
+      "itemId": "Q06",
+      "batchId": "W08",
+      "value": 3.5,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0091"
+    },
+    {
+      "storeId": "S11",
+      "itemId": "Q07",
+      "batchId": "W03",
+      "value": 4.1,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0092"
+    },
+    {
+      "storeId": "S11",
+      "itemId": "Q08",
+      "batchId": "W03",
+      "value": 3.5,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0093"
+    },
+    {
+      "storeId": "S12",
+      "itemId": "Q01",
+      "batchId": "W05",
+      "value": 4.7,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0094"
+    },
+    {
+      "storeId": "S12",
+      "itemId": "Q04",
+      "batchId": "W06",
+      "value": 4.3,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0095"
+    },
+    {
+      "storeId": "S12",
+      "itemId": "Q05",
+      "batchId": "W08",
+      "value": 3.7,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0096"
+    },
+    {
+      "storeId": "S12",
+      "itemId": "Q06",
+      "batchId": "W02",
+      "value": 4,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0097"
+    },
+    {
+      "storeId": "S12",
+      "itemId": "Q07",
+      "batchId": "W08",
+      "value": 3.1,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0098"
+    },
+    {
+      "storeId": "S12",
+      "itemId": "Q08",
+      "batchId": "W07",
+      "value": 3.7,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0099"
+    },
+    {
+      "storeId": "S13",
+      "itemId": "Q01",
+      "batchId": "W06",
+      "value": 4.6,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0100"
+    },
+    {
+      "storeId": "S13",
+      "itemId": "Q02",
+      "batchId": "W06",
+      "value": 3.8,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0101"
+    },
+    {
+      "storeId": "S13",
+      "itemId": "Q03",
+      "batchId": "W01",
+      "value": 3.7,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0102"
+    },
+    {
+      "storeId": "S13",
+      "itemId": "Q04",
+      "batchId": "W03",
+      "value": 3.4,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0103"
+    },
+    {
+      "storeId": "S13",
+      "itemId": "Q05",
+      "batchId": "W08",
+      "value": 3.3,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0104"
+    },
+    {
+      "storeId": "S13",
+      "itemId": "Q06",
+      "batchId": "W04",
+      "value": 3.2,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0105"
+    },
+    {
+      "storeId": "S13",
+      "itemId": "Q08",
+      "batchId": "W01",
+      "value": 4.2,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0106"
+    },
+    {
+      "storeId": "S13",
+      "itemId": "Q09",
+      "batchId": "W05",
+      "value": 3.7,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0107"
+    },
+    {
+      "storeId": "S13",
+      "itemId": "Q10",
+      "batchId": "W04",
+      "value": 4.1,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0108"
+    },
+    {
+      "storeId": "S13",
+      "itemId": "Q12",
+      "batchId": "W04",
+      "value": 4.5,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0109"
+    },
+    {
+      "storeId": "S14",
+      "itemId": "Q01",
+      "batchId": "W05",
+      "value": 4.6,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0110"
+    },
+    {
+      "storeId": "S14",
+      "itemId": "Q02",
+      "batchId": "W08",
+      "value": 3.6,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0111"
+    },
+    {
+      "storeId": "S14",
+      "itemId": "Q03",
+      "batchId": "W05",
+      "value": 4.7,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0112"
+    },
+    {
+      "storeId": "S14",
+      "itemId": "Q05",
+      "batchId": "W08",
+      "value": 3.1,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0113"
+    },
+    {
+      "storeId": "S14",
+      "itemId": "Q06",
+      "batchId": "W01",
+      "value": 3.6,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0114"
+    },
+    {
+      "storeId": "S14",
+      "itemId": "Q07",
+      "batchId": "W01",
+      "value": 4.3,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0115"
+    },
+    {
+      "storeId": "S14",
+      "itemId": "Q08",
+      "batchId": "W05",
+      "value": 4,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0116"
+    },
+    {
+      "storeId": "S14",
+      "itemId": "Q11",
+      "batchId": "W01",
+      "value": 3.5,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0117"
+    },
+    {
+      "storeId": "S14",
+      "itemId": "Q12",
+      "batchId": "W01",
+      "value": 4,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0118"
+    },
+    {
+      "storeId": "S15",
+      "itemId": "Q01",
+      "batchId": "W02",
+      "value": 5,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0119"
+    },
+    {
+      "storeId": "S15",
+      "itemId": "Q02",
+      "batchId": "W07",
+      "value": 4.3,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0120"
+    },
+    {
+      "storeId": "S15",
+      "itemId": "Q03",
+      "batchId": "W05",
+      "value": 3.9,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0121"
+    },
+    {
+      "storeId": "S15",
+      "itemId": "Q04",
+      "batchId": "W08",
+      "value": 3.9,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0122"
+    },
+    {
+      "storeId": "S15",
+      "itemId": "Q08",
+      "batchId": "W03",
+      "value": 3.4,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0123"
+    },
+    {
+      "storeId": "S15",
+      "itemId": "Q12",
+      "batchId": "W08",
+      "value": 3.3,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0124"
+    },
+    {
+      "storeId": "S16",
+      "itemId": "Q01",
+      "batchId": "W01",
+      "value": 3.8,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0125"
+    },
+    {
+      "storeId": "S16",
+      "itemId": "Q02",
+      "batchId": "W03",
+      "value": 3.7,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0126"
+    },
+    {
+      "storeId": "S16",
+      "itemId": "Q03",
+      "batchId": "W01",
+      "value": 4.2,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0127"
+    },
+    {
+      "storeId": "S16",
+      "itemId": "Q06",
+      "batchId": "W01",
+      "value": 3.3,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0128"
+    },
+    {
+      "storeId": "S16",
+      "itemId": "Q07",
+      "batchId": "W03",
+      "value": 3.5,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0129"
+    },
+    {
+      "storeId": "S16",
+      "itemId": "Q08",
+      "batchId": "W02",
+      "value": 3.3,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0130"
+    },
+    {
+      "storeId": "S16",
+      "itemId": "Q10",
+      "batchId": "W02",
+      "value": 3.8,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0131"
+    },
+    {
+      "storeId": "S16",
+      "itemId": "Q12",
+      "batchId": "W06",
+      "value": 3.9,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0132"
+    },
+    {
+      "storeId": "S17",
+      "itemId": "Q01",
+      "batchId": "W01",
+      "value": 4.9,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0133"
+    },
+    {
+      "storeId": "S17",
+      "itemId": "Q02",
+      "batchId": "W02",
+      "value": 4.2,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0134"
+    },
+    {
+      "storeId": "S17",
+      "itemId": "Q03",
+      "batchId": "W06",
+      "value": 4.2,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0135"
+    },
+    {
+      "storeId": "S17",
+      "itemId": "Q04",
+      "batchId": "W05",
+      "value": 4.4,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0136"
+    },
+    {
+      "storeId": "S17",
+      "itemId": "Q05",
+      "batchId": "W06",
+      "value": 3.7,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0137"
+    },
+    {
+      "storeId": "S17",
+      "itemId": "Q06",
+      "batchId": "W04",
+      "value": 3.6,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0138"
+    },
+    {
+      "storeId": "S17",
+      "itemId": "Q07",
+      "batchId": "W05",
+      "value": 4.1,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0139"
+    },
+    {
+      "storeId": "S17",
+      "itemId": "Q08",
+      "batchId": "W01",
+      "value": 4,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0140"
+    },
+    {
+      "storeId": "S17",
+      "itemId": "Q09",
+      "batchId": "W05",
+      "value": 4,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0141"
+    },
+    {
+      "storeId": "S17",
+      "itemId": "Q11",
+      "batchId": "W01",
+      "value": 4,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0142"
+    },
+    {
+      "storeId": "S18",
+      "itemId": "Q01",
+      "batchId": "W03",
+      "value": 3.7,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0143"
+    },
+    {
+      "storeId": "S18",
+      "itemId": "Q02",
+      "batchId": "W07",
+      "value": 3.6,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0144"
+    },
+    {
+      "storeId": "S18",
+      "itemId": "Q07",
+      "batchId": "W07",
+      "value": 3.6,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0145"
+    },
+    {
+      "storeId": "S18",
+      "itemId": "Q08",
+      "batchId": "W02",
+      "value": 4.1,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0146"
+    },
+    {
+      "storeId": "S18",
+      "itemId": "Q09",
+      "batchId": "W05",
+      "value": 3,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0147"
+    },
+    {
+      "storeId": "S18",
+      "itemId": "Q10",
+      "batchId": "W04",
+      "value": 3.5,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0148"
+    },
+    {
+      "storeId": "S18",
+      "itemId": "Q12",
+      "batchId": "W08",
+      "value": 4.3,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0149"
+    },
+    {
+      "storeId": "S19",
+      "itemId": "Q01",
+      "batchId": "W02",
+      "value": 4.5,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0150"
+    },
+    {
+      "storeId": "S19",
+      "itemId": "Q02",
+      "batchId": "W08",
+      "value": 4,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0151"
+    },
+    {
+      "storeId": "S19",
+      "itemId": "Q03",
+      "batchId": "W07",
+      "value": 4.6,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0152"
+    },
+    {
+      "storeId": "S19",
+      "itemId": "Q04",
+      "batchId": "W06",
+      "value": 3.7,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0153"
+    },
+    {
+      "storeId": "S19",
+      "itemId": "Q05",
+      "batchId": "W08",
+      "value": 3.6,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0154"
+    },
+    {
+      "storeId": "S19",
+      "itemId": "Q06",
+      "batchId": "W07",
+      "value": 3.4,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0155"
+    },
+    {
+      "storeId": "S19",
+      "itemId": "Q07",
+      "batchId": "W02",
+      "value": 4.4,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0156"
+    },
+    {
+      "storeId": "S19",
+      "itemId": "Q08",
+      "batchId": "W07",
+      "value": 3.7,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0157"
+    },
+    {
+      "storeId": "S19",
+      "itemId": "Q12",
+      "batchId": "W08",
+      "value": 3.7,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0158"
+    },
+    {
+      "storeId": "S20",
+      "itemId": "Q01",
+      "batchId": "W05",
+      "value": 4.2,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0159"
+    },
+    {
+      "storeId": "S20",
+      "itemId": "Q02",
+      "batchId": "W02",
+      "value": 4,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0160"
+    },
+    {
+      "storeId": "S20",
+      "itemId": "Q03",
+      "batchId": "W07",
+      "value": 3.9,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0161"
+    },
+    {
+      "storeId": "S20",
+      "itemId": "Q04",
+      "batchId": "W06",
+      "value": 3.7,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0162"
+    },
+    {
+      "storeId": "S20",
+      "itemId": "Q05",
+      "batchId": "W05",
+      "value": 3.4,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0163"
+    },
+    {
+      "storeId": "S20",
+      "itemId": "Q06",
+      "batchId": "W03",
+      "value": 3.7,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0164"
+    },
+    {
+      "storeId": "S20",
+      "itemId": "Q07",
+      "batchId": "W06",
+      "value": 4.2,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0165"
+    },
+    {
+      "storeId": "S20",
+      "itemId": "Q08",
+      "batchId": "W07",
+      "value": 3.9,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0166"
+    },
+    {
+      "storeId": "S20",
+      "itemId": "Q09",
+      "batchId": "W04",
+      "value": 3.3,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0167"
+    },
+    {
+      "storeId": "S20",
+      "itemId": "Q10",
+      "batchId": "W02",
+      "value": 3.7,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0168"
+    },
+    {
+      "storeId": "S20",
+      "itemId": "Q12",
+      "batchId": "W03",
+      "value": 3.4,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0169"
+    },
+    {
+      "storeId": "S21",
+      "itemId": "Q01",
+      "batchId": "W07",
+      "value": 4.9,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0170"
+    },
+    {
+      "storeId": "S21",
+      "itemId": "Q02",
+      "batchId": "W04",
+      "value": 4.3,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0171"
+    },
+    {
+      "storeId": "S21",
+      "itemId": "Q03",
+      "batchId": "W06",
+      "value": 3.7,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0172"
+    },
+    {
+      "storeId": "S21",
+      "itemId": "Q05",
+      "batchId": "W04",
+      "value": 3.7,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0173"
+    },
+    {
+      "storeId": "S21",
+      "itemId": "Q06",
+      "batchId": "W03",
+      "value": 3.7,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0174"
+    },
+    {
+      "storeId": "S21",
+      "itemId": "Q07",
+      "batchId": "W02",
+      "value": 4.8,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0175"
+    },
+    {
+      "storeId": "S21",
+      "itemId": "Q08",
+      "batchId": "W08",
+      "value": 3.6,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0176"
+    },
+    {
+      "storeId": "S21",
+      "itemId": "Q10",
+      "batchId": "W02",
+      "value": 3.5,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0177"
+    },
+    {
+      "storeId": "S21",
+      "itemId": "Q11",
+      "batchId": "W08",
+      "value": 2.7,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0178"
+    },
+    {
+      "storeId": "S21",
+      "itemId": "Q12",
+      "batchId": "W04",
+      "value": 3.1,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0179"
+    },
+    {
+      "storeId": "S22",
+      "itemId": "Q01",
+      "batchId": "W07",
+      "value": 4.5,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0180"
+    },
+    {
+      "storeId": "S22",
+      "itemId": "Q02",
+      "batchId": "W05",
+      "value": 4.3,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0181"
+    },
+    {
+      "storeId": "S22",
+      "itemId": "Q03",
+      "batchId": "W01",
+      "value": 4.5,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0182"
+    },
+    {
+      "storeId": "S22",
+      "itemId": "Q04",
+      "batchId": "W02",
+      "value": 4.3,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0183"
+    },
+    {
+      "storeId": "S22",
+      "itemId": "Q07",
+      "batchId": "W06",
+      "value": 4.5,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0184"
+    },
+    {
+      "storeId": "S22",
+      "itemId": "Q08",
+      "batchId": "W04",
+      "value": 4.4,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0185"
+    },
+    {
+      "storeId": "S22",
+      "itemId": "Q09",
+      "batchId": "W03",
+      "value": 3.4,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0186"
+    },
+    {
+      "storeId": "S22",
+      "itemId": "Q10",
+      "batchId": "W01",
+      "value": 3.6,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0187"
+    },
+    {
+      "storeId": "S22",
+      "itemId": "Q12",
+      "batchId": "W06",
+      "value": 3.3,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0188"
+    },
+    {
+      "storeId": "S23",
+      "itemId": "Q01",
+      "batchId": "W03",
+      "value": 3.5,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0189"
+    },
+    {
+      "storeId": "S23",
+      "itemId": "Q02",
+      "batchId": "W07",
+      "value": 4.3,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0190"
+    },
+    {
+      "storeId": "S23",
+      "itemId": "Q03",
+      "batchId": "W05",
+      "value": 4.3,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0191"
+    },
+    {
+      "storeId": "S23",
+      "itemId": "Q06",
+      "batchId": "W06",
+      "value": 3.7,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0192"
+    },
+    {
+      "storeId": "S23",
+      "itemId": "Q08",
+      "batchId": "W08",
+      "value": 3.8,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0193"
+    },
+    {
+      "storeId": "S23",
+      "itemId": "Q09",
+      "batchId": "W07",
+      "value": 3.8,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0194"
+    },
+    {
+      "storeId": "S23",
+      "itemId": "Q11",
+      "batchId": "W02",
+      "value": 3.9,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0195"
+    },
+    {
+      "storeId": "S24",
+      "itemId": "Q01",
+      "batchId": "W01",
+      "value": 4.7,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0196"
+    },
+    {
+      "storeId": "S24",
+      "itemId": "Q02",
+      "batchId": "W01",
+      "value": 3.8,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0197"
+    },
+    {
+      "storeId": "S24",
+      "itemId": "Q03",
+      "batchId": "W02",
+      "value": 4.1,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0198"
+    },
+    {
+      "storeId": "S24",
+      "itemId": "Q04",
+      "batchId": "W01",
+      "value": 3.4,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0199"
+    },
+    {
+      "storeId": "S24",
+      "itemId": "Q05",
+      "batchId": "W06",
+      "value": 3.6,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0200"
+    },
+    {
+      "storeId": "S24",
+      "itemId": "Q06",
+      "batchId": "W02",
+      "value": 4.4,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0201"
+    },
+    {
+      "storeId": "S24",
+      "itemId": "Q08",
+      "batchId": "W02",
+      "value": 4.4,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0202"
+    },
+    {
+      "storeId": "S24",
+      "itemId": "Q09",
+      "batchId": "W07",
+      "value": 3.2,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0203"
+    },
+    {
+      "storeId": "S24",
+      "itemId": "Q10",
+      "batchId": "W02",
+      "value": 4.1,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0204"
+    },
+    {
+      "storeId": "S24",
+      "itemId": "Q12",
+      "batchId": "W01",
+      "value": 3.9,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0205"
+    },
+    {
+      "storeId": "S25",
+      "itemId": "Q01",
+      "batchId": "W03",
+      "value": 4.5,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0206"
+    },
+    {
+      "storeId": "S25",
+      "itemId": "Q02",
+      "batchId": "W03",
+      "value": 4.3,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0207"
+    },
+    {
+      "storeId": "S25",
+      "itemId": "Q03",
+      "batchId": "W02",
+      "value": 4.4,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0208"
+    },
+    {
+      "storeId": "S25",
+      "itemId": "Q04",
+      "batchId": "W04",
+      "value": 3.5,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0209"
+    },
+    {
+      "storeId": "S25",
+      "itemId": "Q05",
+      "batchId": "W01",
+      "value": 3.7,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0210"
+    },
+    {
+      "storeId": "S25",
+      "itemId": "Q06",
+      "batchId": "W02",
+      "value": 4.1,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0211"
+    },
+    {
+      "storeId": "S25",
+      "itemId": "Q07",
+      "batchId": "W03",
+      "value": 4.2,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0212"
+    },
+    {
+      "storeId": "S25",
+      "itemId": "Q08",
+      "batchId": "W04",
+      "value": 4.1,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0213"
+    },
+    {
+      "storeId": "S25",
+      "itemId": "Q10",
+      "batchId": "W03",
+      "value": 3.1,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0214"
+    },
+    {
+      "storeId": "S25",
+      "itemId": "Q11",
+      "batchId": "W06",
+      "value": 3.9,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0215"
+    },
+    {
+      "storeId": "S25",
+      "itemId": "Q12",
+      "batchId": "W06",
+      "value": 4.1,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0216"
+    },
+    {
+      "storeId": "S26",
+      "itemId": "Q01",
+      "batchId": "W07",
+      "value": 4.9,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0217"
+    },
+    {
+      "storeId": "S26",
+      "itemId": "Q03",
+      "batchId": "W06",
+      "value": 4.1,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0218"
+    },
+    {
+      "storeId": "S26",
+      "itemId": "Q04",
+      "batchId": "W02",
+      "value": 4.3,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0219"
+    },
+    {
+      "storeId": "S26",
+      "itemId": "Q05",
+      "batchId": "W01",
+      "value": 4.4,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0220"
+    },
+    {
+      "storeId": "S26",
+      "itemId": "Q06",
+      "batchId": "W04",
+      "value": 4.3,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0221"
+    },
+    {
+      "storeId": "S26",
+      "itemId": "Q07",
+      "batchId": "W03",
+      "value": 3.8,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0222"
+    },
+    {
+      "storeId": "S26",
+      "itemId": "Q08",
+      "batchId": "W05",
+      "value": 4.6,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0223"
+    },
+    {
+      "storeId": "S26",
+      "itemId": "Q09",
+      "batchId": "W04",
+      "value": 3.7,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0224"
+    },
+    {
+      "storeId": "S26",
+      "itemId": "Q10",
+      "batchId": "W05",
+      "value": 3.9,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0225"
+    },
+    {
+      "storeId": "S27",
+      "itemId": "Q01",
+      "batchId": "W02",
+      "value": 5,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0226"
+    },
+    {
+      "storeId": "S27",
+      "itemId": "Q02",
+      "batchId": "W03",
+      "value": 4.2,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0227"
+    },
+    {
+      "storeId": "S27",
+      "itemId": "Q03",
+      "batchId": "W01",
+      "value": 4.2,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0228"
+    },
+    {
+      "storeId": "S27",
+      "itemId": "Q04",
+      "batchId": "W01",
+      "value": 3.9,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0229"
+    },
+    {
+      "storeId": "S27",
+      "itemId": "Q07",
+      "batchId": "W02",
+      "value": 4.4,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0230"
+    },
+    {
+      "storeId": "S27",
+      "itemId": "Q08",
+      "batchId": "W08",
+      "value": 3.4,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0231"
+    },
+    {
+      "storeId": "S27",
+      "itemId": "Q09",
+      "batchId": "W03",
+      "value": 2.6,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0232"
+    },
+    {
+      "storeId": "S27",
+      "itemId": "Q10",
+      "batchId": "W07",
+      "value": 3.6,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0233"
+    },
+    {
+      "storeId": "S28",
+      "itemId": "Q01",
+      "batchId": "W06",
+      "value": 4.8,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0234"
+    },
+    {
+      "storeId": "S28",
+      "itemId": "Q03",
+      "batchId": "W01",
+      "value": 3.5,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0235"
+    },
+    {
+      "storeId": "S28",
+      "itemId": "Q05",
+      "batchId": "W08",
+      "value": 3.7,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0236"
+    },
+    {
+      "storeId": "S28",
+      "itemId": "Q06",
+      "batchId": "W05",
+      "value": 3.2,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0237"
+    },
+    {
+      "storeId": "S28",
+      "itemId": "Q07",
+      "batchId": "W06",
+      "value": 3.7,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0238"
+    },
+    {
+      "storeId": "S28",
+      "itemId": "Q11",
+      "batchId": "W05",
+      "value": 3.9,
+      "block": "core",
+      "observed": true,
+      "id": "obs-0239"
+    },
+    {
+      "storeId": "S29",
+      "itemId": "Q13",
+      "batchId": "O04",
+      "value": 4.1,
+      "block": "outlet",
+      "observed": true,
+      "id": "obs-0240"
+    },
+    {
+      "storeId": "S29",
+      "itemId": "Q14",
+      "batchId": "O04",
+      "value": 3.6,
+      "block": "outlet",
+      "observed": true,
+      "id": "obs-0241"
+    },
+    {
+      "storeId": "S29",
+      "itemId": "Q15",
+      "batchId": "O02",
+      "value": 3.9,
+      "block": "outlet",
+      "observed": true,
+      "id": "obs-0242"
+    },
+    {
+      "storeId": "S29",
+      "itemId": "Q16",
+      "batchId": "O01",
+      "value": 3.4,
+      "block": "outlet",
+      "observed": true,
+      "id": "obs-0243"
+    },
+    {
+      "storeId": "S29",
+      "itemId": "Q17",
+      "batchId": "O03",
+      "value": 3.8,
+      "block": "outlet",
+      "observed": true,
+      "id": "obs-0244"
+    },
+    {
+      "storeId": "S30",
+      "itemId": "Q13",
+      "batchId": "O03",
+      "value": 3.3,
+      "block": "outlet",
+      "observed": true,
+      "id": "obs-0245"
+    },
+    {
+      "storeId": "S30",
+      "itemId": "Q14",
+      "batchId": "O02",
+      "value": 2.8,
+      "block": "outlet",
+      "observed": true,
+      "id": "obs-0246"
+    },
+    {
+      "storeId": "S30",
+      "itemId": "Q16",
+      "batchId": "O01",
+      "value": 4,
+      "block": "outlet",
+      "observed": true,
+      "id": "obs-0247"
+    },
+    {
+      "storeId": "S31",
+      "itemId": "Q14",
+      "batchId": "O03",
+      "value": 3.5,
+      "block": "outlet",
+      "observed": true,
+      "id": "obs-0248"
+    },
+    {
+      "storeId": "S31",
+      "itemId": "Q15",
+      "batchId": "O04",
+      "value": 4.3,
+      "block": "outlet",
+      "observed": true,
+      "id": "obs-0249"
+    },
+    {
+      "storeId": "S31",
+      "itemId": "Q17",
+      "batchId": "O02",
+      "value": 3,
+      "block": "outlet",
+      "observed": true,
+      "id": "obs-0250"
+    },
+    {
+      "storeId": "S32",
+      "itemId": "Q13",
+      "batchId": "O01",
+      "value": 3.4,
+      "block": "outlet",
+      "observed": true,
+      "id": "obs-0251"
+    },
+    {
+      "storeId": "S32",
+      "itemId": "Q14",
+      "batchId": "O04",
+      "value": 3.6,
+      "block": "outlet",
+      "observed": true,
+      "id": "obs-0252"
+    },
+    {
+      "storeId": "S33",
+      "itemId": "Q13",
+      "batchId": "O01",
+      "value": 3.9,
+      "block": "outlet",
+      "observed": true,
+      "id": "obs-0253"
+    },
+    {
+      "storeId": "S33",
+      "itemId": "Q14",
+      "batchId": "O02",
+      "value": 4,
+      "block": "outlet",
+      "observed": true,
+      "id": "obs-0254"
+    },
+    {
+      "storeId": "S33",
+      "itemId": "Q15",
+      "batchId": "O02",
+      "value": 3.9,
+      "block": "outlet",
+      "observed": true,
+      "id": "obs-0255"
+    },
+    {
+      "storeId": "S34",
+      "itemId": "Q13",
+      "batchId": "O04",
+      "value": 3.7,
+      "block": "outlet",
+      "observed": true,
+      "id": "obs-0256"
+    },
+    {
+      "storeId": "S34",
+      "itemId": "Q14",
+      "batchId": "O04",
+      "value": 3.2,
+      "block": "outlet",
+      "observed": true,
+      "id": "obs-0257"
+    },
+    {
+      "storeId": "S34",
+      "itemId": "Q15",
+      "batchId": "O01",
+      "value": 3.7,
+      "block": "outlet",
+      "observed": true,
+      "id": "obs-0258"
+    },
+    {
+      "storeId": "S35",
+      "itemId": "Q15",
+      "batchId": "O02",
+      "value": 4.2,
+      "block": "outlet",
+      "observed": true,
+      "id": "obs-0259"
+    },
+    {
+      "storeId": "S35",
+      "itemId": "Q16",
+      "batchId": "O03",
+      "value": 3.2,
+      "block": "outlet",
+      "observed": true,
+      "id": "obs-0260"
+    },
+    {
+      "storeId": "S35",
+      "itemId": "Q17",
+      "batchId": "O02",
+      "value": 3.8,
+      "block": "outlet",
+      "observed": true,
+      "id": "obs-0261"
+    },
+    {
+      "storeId": "S36",
+      "itemId": "Q15",
+      "batchId": "O04",
+      "value": 3.8,
+      "block": "outlet",
+      "observed": true,
+      "id": "obs-0262"
+    },
+    {
+      "storeId": "S36",
+      "itemId": "Q16",
+      "batchId": "O02",
+      "value": 2.7,
+      "block": "outlet",
+      "observed": true,
+      "id": "obs-0263"
+    },
+    {
+      "storeId": "S36",
+      "itemId": "Q17",
+      "batchId": "O04",
+      "value": 3.6,
+      "block": "outlet",
+      "observed": true,
+      "id": "obs-0264"
+    }
+  ]
+}
